@@ -1,4 +1,4 @@
-- hosts: node2
+- hosts: node_2
   become: yes
   gather_facts: true
   tasks:
@@ -72,7 +72,7 @@
   - name : pull wordpress image
     command: "sudo docker pull wordpress"
   - name : run wordpress container 
-    command: "docker run --name some-wordpress -p 8080:80 -d wordpress"
+    command: "docker run --name vt-wordpress -p 8080:80 -d wordpress"
 
 
 

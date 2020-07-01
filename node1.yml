@@ -1,4 +1,4 @@
-- hosts: node1
+- hosts: node_1
   become: yes
   gather_facts: true
   tasks:
@@ -72,7 +72,7 @@
   - name : pull sql image
     command: "sudo docker pull mysql"
   - name : run mysql container 
-    command: "sudo  docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 8080:80 -d mysql"
+    command: "sudo  docker run --name vt-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 8080:80 -d mysql"
 
 
 
