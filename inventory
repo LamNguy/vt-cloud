@@ -1,0 +1,39 @@
+#ansible [group] -i inventory -m ping
+#ansible all -m ping 
+#ansible servers -i inventory -m  shell -a "/bin/echo 'Hello' > /tmp/hello.txt"
+#ansible local -m command -a 'touchtest'
+#ansible [group] -m ping 
+#ansible localhost -m setup | less press q to quit 
+
+#[mylaptop]
+#ansible_ssh_user , pass cua may minh 
+#192.168.22.14 ansible_ssh_user=lam ansible_ssh_pass=123456
+
+
+
+
+# CONFIG HERE 
+
+[master]
+54.87.252.223 ansible_ssh_user=ubuntu
+
+
+[node_1]
+35.168.1.102 ansible_ssh_user=ubuntu
+
+
+[node_1:vars]
+ansible_user=ec2-user 
+ansible_ssh_private_key_file=ansible.pem
+
+[node_2]
+35.174.200.202 ansible_ssh_user=ubuntu
+
+[node_2:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=ansible.pem
+
+[master:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=master.pem
+
